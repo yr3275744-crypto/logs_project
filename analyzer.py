@@ -13,3 +13,12 @@ def search_big_size_lines(log_list:list):
 def add_size_flage(log_list:list):
     with_size_flage_list = [line + ["LARGE"] if int(line[5]) > 5000 else line + ["NORMAL"] for line in log_list]
     return with_size_flage_list
+
+def counting_num_requests(log_list:list):
+    num_of_requests = {}
+    for line in log_list:
+        if line[1] in num_of_requests:
+            num_of_requests[line[1]] += 1
+        else:
+            num_of_requests[line[1]] = 1
+    return num_of_requests
