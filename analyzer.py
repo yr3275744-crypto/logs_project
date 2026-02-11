@@ -22,3 +22,7 @@ def counting_num_requests(log_list:list):
         else:
             num_of_requests[line[1]] = 1
     return num_of_requests
+
+def protocol_port_aranging(log_list:list):
+    protocol_port_arrangement = {line[3]:line[4] for line in log_list}
+    return protocol_port_arrangement
