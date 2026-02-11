@@ -9,3 +9,7 @@ def search_sensitive_port_lines(log_list:list):
 def search_big_size_lines(log_list:list):
     big_size_lines = [line for line in log_list if int(line[5]) > 5000]
     return big_size_lines
+
+def add_size_flage(log_list:list):
+    with_size_flage_list = [line + ["LARGE"] if int(line[5]) > 5000 else line + ["NORMAL"] for line in log_list]
+    return with_size_flage_list
